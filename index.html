@@ -1,0 +1,578 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Marcos Paulo | Desenvolvedor Front-end</title>
+  <meta name="description" content="Portfólio de Marcos Paulo, desenvolvedor front-end de Belo Horizonte e fundador da MAvision. Sites, sistemas, automação e IA.">
+  <meta name="theme-color" content="#07050d">
+  <meta property="og:title" content="Marcos Paulo | Desenvolvedor Front-end">
+  <meta property="og:description" content="Sites, sistemas, automação e IA. Fundador da MAvision.">
+  <meta property="og:image" content="assets/img/marcos.jpg">
+  <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/style.css?v=6">
+</head>
+<body class="is-loading">
+
+  <div class="loader" id="loader" aria-hidden="true">
+    <div class="loader__box">
+      <div class="loader__lines" id="loaderLines"></div>
+      <div class="loader__bar"><span id="loaderBar"></span></div>
+      <div class="loader__pct"><span id="loaderPct">0</span>%</div>
+    </div>
+  </div>
+
+  <canvas class="bg-canvas" id="bgCanvas" aria-hidden="true"></canvas>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-noise" aria-hidden="true"></div>
+  <div class="cursor-glow" id="cursorGlow" aria-hidden="true"></div>
+  <div class="scroll-progress" id="scrollProgress" aria-hidden="true"></div>
+
+  <header class="nav" id="nav">
+    <a href="#inicio" class="logo" aria-label="Marcos, início">
+      <span class="logo__bracket">&lt;</span><span class="logo__name">Marcos</span><span class="logo__bracket">/&gt;</span>
+    </a>
+
+    <nav class="nav__links" id="navLinks" aria-label="Principal">
+      <a href="#inicio" data-i18n="nav.home">Início</a>
+      <a href="#projetos" data-i18n="nav.projects">Projetos</a>
+      <a href="#sobre" data-i18n="nav.about">Sobre</a>
+      <a href="#stack" data-i18n="nav.stack">Stack</a>
+      <a href="#certificados" data-i18n="nav.certs">Certificados</a>
+      <a href="#trajetoria" data-i18n="nav.journey">Trajetória</a>
+      <a href="#curriculo" data-i18n="nav.resume">Currículo</a>
+      <a href="#contato" data-i18n="nav.contact">Contato</a>
+    </nav>
+
+    <div class="nav__actions">
+      <div class="lang" role="group" aria-label="Idioma / Language">
+        <button class="lang__btn is-active" data-lang="pt" aria-pressed="true">PT</button>
+        <button class="lang__btn" data-lang="en" aria-pressed="false">EN</button>
+        <span class="lang__pill" aria-hidden="true"></span>
+      </div>
+      <button class="burger" id="burger" aria-label="Abrir menu" aria-expanded="false" aria-controls="navLinks">
+        <span></span><span></span>
+      </button>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero" id="inicio">
+      <div class="hero__inner container">
+        <div class="hero__copy">
+          <div class="chip reveal">
+            <span class="chip__dot"></span>
+            <span data-i18n="hero.status">Disponível para novos projetos</span>
+          </div>
+
+          <p class="hero__hello mono reveal" data-delay="1"><span class="c-purple">const</span> dev <span class="c-muted">=</span> <span class="c-string">"Marcos Paulo"</span><span class="c-muted">;</span></p>
+
+          <h1 class="hero__title" aria-label="Marcos">
+            <span class="hero__name" id="heroName" data-text="MARCOS">MARCOS</span>
+          </h1>
+
+          <p class="hero__role mono reveal" data-delay="2">
+            <span class="c-muted">&gt;</span> <span id="typeRole"></span><span class="caret"></span>
+          </p>
+
+          <p class="hero__lead reveal" data-delay="3" data-i18n="hero.lead">Desenvolvedor de Belo Horizonte e fundador da MAvision. Transformo ideias em sites, sistemas e automações com design que chama atenção e código que se sustenta.</p>
+
+          <div class="hero__cta reveal" data-delay="4">
+            <a href="#projetos" class="btn btn--primary magnetic">
+              <span data-i18n="hero.cta1">Ver projetos</span>
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a href="#contato" class="btn btn--ghost magnetic">
+              <span data-i18n="hero.cta2">Vamos conversar</span>
+            </a>
+          </div>
+
+          <ul class="hero__meta mono reveal" data-delay="5">
+            <li><span class="c-muted">loc</span> BH · MG · BR</li>
+            <li><span class="c-muted">time</span> <span id="clock">--:--</span> UTC−3</li>
+            <li><span class="c-muted">build</span> <span class="c-green">passing</span></li>
+          </ul>
+        </div>
+
+        <div class="hero__visual">
+          <div class="portrait reveal" data-delay="2" data-tilt>
+            <div class="portrait__frame">
+              <img src="assets/img/marcos.jpg" alt="Marcos Paulo" width="900" height="1600" fetchpriority="high">
+              <div class="portrait__scan" aria-hidden="true"></div>
+              <div class="portrait__tint" aria-hidden="true"></div>
+            </div>
+            <div class="portrait__corner tl" aria-hidden="true"></div>
+            <div class="portrait__corner tr" aria-hidden="true"></div>
+            <div class="portrait__corner bl" aria-hidden="true"></div>
+            <div class="portrait__corner br" aria-hidden="true"></div>
+            <div class="portrait__tag mono" aria-hidden="true">ID_0496 · ONLINE</div>
+          </div>
+
+          <div class="editor reveal" data-delay="3" aria-hidden="true">
+            <div class="editor__bar">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span class="editor__file mono">marcos.js</span>
+            </div>
+            <pre class="editor__code mono"><code id="editorCode"></code><span class="caret"></span></pre>
+          </div>
+
+          <div class="float-badge float-badge--a mono" aria-hidden="true">
+            <span class="c-purple">&lt;/&gt;</span> front-end
+          </div>
+          <div class="float-badge float-badge--b mono" aria-hidden="true">
+            <span class="c-green">●</span> MAvision
+          </div>
+        </div>
+      </div>
+
+      <a href="#projetos" class="hero__scroll mono" aria-label="Rolar para projetos">
+        <span data-i18n="hero.scroll">role</span>
+        <span class="hero__scroll-line"></span>
+      </a>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee__track">
+        <span>FRONT-END</span><i>✦</i><span>UI DESIGN</span><i>✦</i><span>FLUTTER</span><i>✦</i><span>PYTHON</span><i>✦</i><span>AUTOMAÇÃO</span><i>✦</i><span>IA</span><i>✦</i><span>BACK-END</span><i>✦</i><span>SEO</span><i>✦</i>
+        <span>FRONT-END</span><i>✦</i><span>UI DESIGN</span><i>✦</i><span>FLUTTER</span><i>✦</i><span>PYTHON</span><i>✦</i><span>AUTOMAÇÃO</span><i>✦</i><span>IA</span><i>✦</i><span>BACK-END</span><i>✦</i><span>SEO</span><i>✦</i>
+      </div>
+    </div>
+
+    <section class="section" id="projetos">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__index mono reveal"><span class="c-purple">01</span> // <span data-i18n="projects.kicker">projetos</span></p>
+          <h2 class="section__title reveal" data-delay="1" data-i18n="projects.title">Trabalhos selecionados</h2>
+          <p class="section__sub reveal" data-delay="2" data-i18n="projects.sub">Projetos reais, no ar, criados do zero. Passe o mouse sobre cada tela para percorrer o site completo.</p>
+        </header>
+
+        <div class="projects">
+          <article class="project reveal" data-glow>
+            <a class="project__shot" href="https://mavisiondigital.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir site da MAvision">
+              <div class="browser">
+                <div class="browser__bar">
+                  <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                  <span class="browser__url mono">mavisiondigital.vercel.app</span>
+                </div>
+                <div class="browser__view">
+                  <img src="assets/img/shots/mavision.webp" alt="Página completa do site da MAvision" loading="lazy">
+                </div>
+              </div>
+              <span class="project__hint mono" data-i18n="projects.hint">passe o mouse ↓</span>
+            </a>
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num mono">01</span>
+                <span class="badge badge--purple" data-i18n="projects.p1.role">Fundador</span>
+                <span class="badge badge--live"><span class="chip__dot"></span><span data-i18n="projects.live">No ar</span></span>
+              </div>
+              <h3 class="project__name">MAvision</h3>
+              <p class="project__cat mono" data-i18n="projects.p1.cat">agência digital · sites, sistemas e IA</p>
+              <p class="project__desc" data-i18n="projects.p1.desc">A agência digital que fundei para levar sites, sistemas e automações com IA a empresas que querem ser encontradas. O site apresenta serviços, cases, um processo em cinco etapas, um comparador interativo de antes e depois arrastável, FAQ e um formulário de orçamento que leva o cliente direto ao WhatsApp, tudo estruturado para SEO e conversão.</p>
+              <ul class="tags mono">
+                <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Sitemap · SEO</li>
+              </ul>
+              <a class="link-arrow" href="https://mavisiondigital.vercel.app/" target="_blank" rel="noopener">
+                <span data-i18n="projects.visit">Visitar site</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project project--rev reveal" data-glow>
+            <a class="project__shot" href="https://rumobh.onrender.com/" target="_blank" rel="noopener" aria-label="Abrir site do RUMO">
+              <div class="browser">
+                <div class="browser__bar">
+                  <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                  <span class="browser__url mono">rumobh.onrender.com</span>
+                </div>
+                <div class="browser__view">
+                  <img src="assets/img/shots/rumo.webp" alt="Página completa do site do RUMO" loading="lazy">
+                </div>
+              </div>
+              <span class="project__hint mono" data-i18n="projects.hint">passe o mouse ↓</span>
+            </a>
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num mono">02</span>
+                <span class="badge badge--purple" data-i18n="projects.p2.role">Fundador · em equipe</span>
+                <span class="badge badge--live"><span class="chip__dot"></span><span data-i18n="projects.live">No ar</span></span>
+              </div>
+              <h3 class="project__name">RUMO</h3>
+              <p class="project__cat mono" data-i18n="projects.p2.cat">edtech · app de apoio à decisão</p>
+              <p class="project__desc" data-i18n="projects.p2.desc">Aplicativo que ajuda estudantes de Minas Gerais a escolher a faculdade com segurança. Cruza nota do Enem, modalidade, nota do MEC e renda familiar para gerar recomendações explicadas, compara instituições lado a lado com distância no mapa, simula custos com bolsa e tem um chat com IA que responde por que uma opção combina mais com o seu perfil.</p>
+              <ul class="tags mono">
+                <li>Flutter</li><li>Flask</li><li>Python</li><li>MySQL · SQLite</li>
+              </ul>
+              <a class="link-arrow" href="https://rumobh.onrender.com/" target="_blank" rel="noopener">
+                <span data-i18n="projects.visit">Visitar site</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+
+          <article class="project reveal" data-glow>
+            <a class="project__shot" href="https://lenmel.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir site da Lenmel">
+              <div class="browser">
+                <div class="browser__bar">
+                  <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+                  <span class="browser__url mono">lenmel.vercel.app</span>
+                </div>
+                <div class="browser__view">
+                  <img src="assets/img/shots/lenmel.webp" alt="Página completa do site da Lenmel" loading="lazy">
+                </div>
+              </div>
+              <span class="project__hint mono" data-i18n="projects.hint">passe o mouse ↓</span>
+            </a>
+            <div class="project__info">
+              <div class="project__top">
+                <span class="project__num mono">03</span>
+                <span class="badge badge--purple" data-i18n="projects.p3.role">Cliente · desenvolvedor</span>
+                <span class="badge badge--live"><span class="chip__dot"></span><span data-i18n="projects.live">No ar</span></span>
+              </div>
+              <h3 class="project__name">Lenmel</h3>
+              <p class="project__cat mono" data-i18n="projects.p3.cat">site institucional · consultoria</p>
+              <p class="project__desc" data-i18n="projects.p3.desc">Site institucional que criei para uma consultoria empresarial e tributária. Organizei a narrativa a partir das dores do cliente, das soluções em duas frentes (gestão e fiscal), de uma metodologia em seis etapas e dos indicadores de resultado, com contadores animados, visual sóbrio em vermelho e preto e um formulário que envia o contato direto para o WhatsApp.</p>
+              <ul class="tags mono">
+                <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Sitemap · SEO</li>
+              </ul>
+              <a class="link-arrow" href="https://lenmel.vercel.app/" target="_blank" rel="noopener">
+                <span data-i18n="projects.visit">Visitar site</span>
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
+              </a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="sobre">
+      <div class="container about">
+        <header class="section__head">
+          <p class="section__index mono reveal"><span class="c-purple">02</span> // <span data-i18n="about.kicker">sobre</span></p>
+          <h2 class="section__title reveal" data-delay="1" data-i18n-html="about.title">Código, design e <em>ambição</em>.</h2>
+        </header>
+
+        <div class="about__grid">
+          <div class="about__text">
+            <p class="about__big reveal" data-i18n="about.p1">Gosto de entender como tudo se arquiteta através do código, e é no front-end que essa curiosidade vira algo que as pessoas veem e sentem.</p>
+            <p class="reveal" data-delay="1" data-i18n="about.p2">Sou de Belo Horizonte, estudo Desenvolvimento Web e Mobile no Cotemig e fundei a MAvision, onde crio sites, sistemas e automações para empresas reais. Sou fã de design e cuido de cada detalhe: estrutura, responsividade, performance, SEO e a experiência de quem está do outro lado da tela.</p>
+            <p class="reveal" data-delay="2" data-i18n="about.p3">O estágio em suporte técnico na Construsite Brasil me colocou em contato com clientes, lojas virtuais e sistemas de gestão em larga escala, e me ensinou a olhar para o código com visão de negócio. Hoje estou ampliando minha base em back-end, banco de dados e IA para entregar projetos cada vez mais completos.</p>
+            <p class="reveal" data-delay="3" data-i18n="about.p4">Sempre espero que o próximo site seja melhor que o último e que o próximo sistema seja mais completo que o anterior. Tenho muita ambição de futuro e gosto de quebrar meus limites mentais para ir cada vez mais longe.</p>
+
+            <div class="stats reveal" data-delay="3">
+              <div class="stat"><strong data-count="3">0</strong><span data-i18n="about.s1">projetos no ar</span></div>
+              <div class="stat"><strong data-count="28" data-suffix="+">0</strong><span data-i18n="about.s2">tecnologias</span></div>
+              <div class="stat"><strong data-count="1">0</strong><span data-i18n="about.s3">empresa fundada</span></div>
+            </div>
+          </div>
+
+          <div class="profile reveal" data-delay="1" data-glow>
+            <div class="profile__bar mono">
+              <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
+              <span>profile.json</span>
+            </div>
+            <dl class="profile__list">
+              <div class="profile__row">
+                <dt class="mono" data-i18n="about.k1">nome</dt>
+                <dd>Marcos Paulo</dd>
+              </div>
+              <div class="profile__row">
+                <dt class="mono" data-i18n="about.k2">localidade</dt>
+                <dd>Belo Horizonte · Minas Gerais</dd>
+              </div>
+              <div class="profile__row">
+                <dt class="mono" data-i18n="about.k3">formação</dt>
+                <dd data-i18n="about.v3">Técnico em Desenvolvimento Web e Mobile · Cotemig</dd>
+              </div>
+              <div class="profile__row">
+                <dt class="mono" data-i18n="about.k4">próximo passo</dt>
+                <dd data-i18n="about.v4">Início da graduação em 2027</dd>
+              </div>
+              <div class="profile__row">
+                <dt class="mono" data-i18n="about.k5">interesses</dt>
+                <dd>
+                  <ul class="pills">
+                    <li data-i18n="about.i1">Front-end</li>
+                    <li data-i18n="about.i2">Sites e sistemas</li>
+                    <li data-i18n="about.i3">Automação</li>
+                    <li data-i18n="about.i4">IA</li>
+                    <li data-i18n="about.i5">Back-end</li>
+                  </ul>
+                </dd>
+              </div>
+            </dl>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="stack">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__index mono reveal"><span class="c-purple">03</span> // stack</p>
+          <h2 class="section__title reveal" data-delay="1" data-i18n="stack.title">Minha caixa de ferramentas</h2>
+          <p class="section__sub reveal" data-delay="2" data-i18n="stack.sub">Linguagens, frameworks, bancos de dados, plataformas e IAs que uso para tirar ideias do papel. Escolha uma categoria.</p>
+        </header>
+
+        <div class="stack reveal" data-delay="2">
+          <div class="stack__tabs" role="tablist" id="stackTabs"></div>
+          <div class="stack__panel" id="stackPanel" role="tabpanel" aria-live="polite">
+            <div class="stack__panel-head mono">
+              <span class="c-muted">$</span> ls ./stack/<span id="stackPath">languages</span> <span class="c-muted" id="stackCount"></span>
+            </div>
+            <div class="stack__grid" id="stackGrid"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="certificados">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__index mono reveal"><span class="c-purple">04</span> // <span data-i18n="certs.kicker">certificados</span></p>
+          <h2 class="section__title reveal" data-delay="1" data-i18n="certs.title">Cursos e certificações</h2>
+          <p class="section__sub reveal" data-delay="2" data-i18n="certs.sub">Formações complementares que fazem parte da minha evolução como desenvolvedor.</p>
+        </header>
+
+        <div class="certs">
+          <a class="cert reveal" href="assets/certs/python-essentials-1.pdf" target="_blank" rel="noopener" data-glow>
+            <div class="cert__head">
+              <span class="cert__icon"><img src="https://cdn.simpleicons.org/cisco/ffffff" alt="" width="28" height="28" loading="lazy"></span>
+              <span class="cert__year mono" data-i18n="certs.c1.date">NOV 2026</span>
+            </div>
+            <h3 class="cert__name" data-i18n="certs.c1.name">Fundamentos do Python 1</h3>
+            <p class="cert__org">Cisco Networking Academy</p>
+            <ul class="tags mono">
+              <li>Python</li><li data-i18n="certs.t.logic">Lógica</li><li data-i18n="certs.t.funcs">Funções</li>
+            </ul>
+            <span class="cert__id mono">ID 07d96cfb-73ea</span>
+            <span class="cert__link mono"><span data-i18n="certs.link">ver certificado</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a class="cert reveal" data-delay="1" href="assets/certs/cisco-packet-tracer.pdf" target="_blank" rel="noopener" data-glow>
+            <div class="cert__head">
+              <span class="cert__icon"><img src="https://cdn.simpleicons.org/cisco/ffffff" alt="" width="28" height="28" loading="lazy"></span>
+              <span class="cert__year mono" data-i18n="certs.c2.date">SET 2025</span>
+            </div>
+            <h3 class="cert__name" data-i18n="certs.c2.name">Começando com o Cisco Packet Tracer</h3>
+            <p class="cert__org">Cisco Networking Academy · Cotemig</p>
+            <ul class="tags mono">
+              <li data-i18n="certs.t.net">Redes</li><li>Packet Tracer</li><li data-i18n="certs.t.sim">Simulação</li>
+            </ul>
+            <span class="cert__id mono">ID cd404e76-8d83</span>
+            <span class="cert__link mono"><span data-i18n="certs.link">ver certificado</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+          <a class="cert reveal" data-delay="2" href="assets/certs/cisco-hardware.pdf" target="_blank" rel="noopener" data-glow>
+            <div class="cert__head">
+              <span class="cert__icon"><img src="https://cdn.simpleicons.org/cisco/ffffff" alt="" width="28" height="28" loading="lazy"></span>
+              <span class="cert__year mono" data-i18n="certs.c3.date">JUN 2025</span>
+            </div>
+            <h3 class="cert__name" data-i18n="certs.c3.name">Fundamentos do Hardware do Computador</h3>
+            <p class="cert__org">Cisco Networking Academy · Cotemig</p>
+            <ul class="tags mono">
+              <li>Hardware</li><li data-i18n="certs.t.pc">Montagem de PC</li><li data-i18n="certs.t.support">Suporte</li>
+            </ul>
+            <span class="cert__id mono">Cotemig · Cisco</span>
+            <span class="cert__link mono"><span data-i18n="certs.link">ver certificado</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="trajetoria">
+      <div class="container">
+        <header class="section__head">
+          <p class="section__index mono reveal"><span class="c-purple">05</span> // <span data-i18n="journey.kicker">trajetória</span></p>
+          <h2 class="section__title reveal" data-delay="1" data-i18n="journey.title">Experiência e formação</h2>
+        </header>
+
+        <ol class="timeline" id="timeline">
+          <span class="timeline__line" aria-hidden="true"><span id="timelineFill"></span></span>
+
+          <li class="timeline__item reveal">
+            <span class="timeline__node" aria-hidden="true"></span>
+            <div class="timeline__card" data-glow>
+              <div class="timeline__meta mono">
+                <span data-i18n="journey.e1.date">ABR 2025 — ABR 2026</span>
+                <span class="badge badge--purple" data-i18n="journey.e1.type">Estágio</span>
+              </div>
+              <h3 class="timeline__title">Construsite Brasil</h3>
+              <p class="timeline__role" data-i18n="journey.e1.role">Estagiário em suporte técnico · 1 ano</p>
+              <p class="timeline__desc" data-i18n="journey.e1.desc">Contato direto com atendimento e tratamento de clientes em larga escala, trabalhando com sites, lojas virtuais e sistemas de gestão. Ampliei meus conhecimentos em HTML, CSS, JavaScript, APIs e integrações, além de atendimento, análise, pensamento crítico e gestão de negócios.</p>
+              <ul class="tags mono">
+                <li>HTML</li><li>CSS</li><li>JS</li><li>API</li><li data-i18n="journey.e1.t1">Integração</li><li data-i18n="journey.e1.t2">Atendimento</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <span class="timeline__node timeline__node--live" aria-hidden="true"></span>
+            <div class="timeline__card" data-glow>
+              <div class="timeline__meta mono">
+                <span data-i18n="journey.e2.date">ATUAL</span>
+                <span class="badge badge--purple" data-i18n="journey.e2.type">Formação</span>
+              </div>
+              <h3 class="timeline__title">Cotemig</h3>
+              <p class="timeline__role" data-i18n="journey.e2.role">Técnico em Desenvolvimento Web e Mobile</p>
+              <p class="timeline__desc" data-i18n="journey.e2.desc">Curso técnico integrado ao ensino médio, com foco em desenvolvimento web e mobile.</p>
+              <ul class="tags mono">
+                <li>Kotlin</li><li>Swift</li><li>Python</li><li>Flutter</li><li>Dart</li><li>HTML</li><li>CSS</li><li>JS</li><li>C#</li><li>MySQL</li><li>SQLite</li><li>Flask</li><li>API</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <span class="timeline__node timeline__node--next" aria-hidden="true"></span>
+            <div class="timeline__card timeline__card--ghost">
+              <div class="timeline__meta mono">
+                <span>2027</span>
+                <span class="badge" data-i18n="journey.e3.type">Próximo passo</span>
+              </div>
+              <h3 class="timeline__title" data-i18n="journey.e3.title">Graduação</h3>
+              <p class="timeline__desc" data-i18n="journey.e3.desc">Início da graduação, mais um degrau para ir cada vez mais longe.</p>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section" id="curriculo">
+      <div class="container">
+        <div class="resume reveal" data-glow>
+          <div class="resume__copy">
+            <p class="section__index mono"><span class="c-purple">06</span> // <span data-i18n="resume.kicker">currículo</span></p>
+            <h2 class="section__title" data-i18n="resume.title">Tudo em uma página.</h2>
+            <p class="section__sub" data-i18n="resume.sub">Minha trajetória, projetos e habilidades reunidos em um currículo pronto para download.</p>
+            <div class="resume__actions">
+              <a href="assets/curriculo-pt.pdf" class="btn btn--primary magnetic" id="resumeBtn" download="Curriculo-Marcos-Paulo.pdf">
+                <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
+                <span data-i18n="resume.download">Baixar currículo</span>
+              </a>
+              <a href="assets/curriculo-pt.pdf" class="btn btn--ghost magnetic" id="resumeView" target="_blank" rel="noopener">
+                <span data-i18n="resume.view">Visualizar</span>
+              </a>
+              <span class="resume__status mono"><span class="chip__dot"></span><span data-i18n="resume.status">PDF · atualizado nov 2026</span></span>
+            </div>
+          </div>
+          <div class="resume__doc" aria-hidden="true">
+            <div class="doc">
+              <div class="doc__head">
+                <span class="doc__avatar"></span>
+                <div><span class="doc__line w60 strong"></span><span class="doc__line w40"></span></div>
+              </div>
+              <span class="doc__line w90"></span>
+              <span class="doc__line w75"></span>
+              <span class="doc__line w85"></span>
+              <span class="doc__sep"></span>
+              <span class="doc__line w35 strong"></span>
+              <span class="doc__line w80"></span>
+              <span class="doc__line w70"></span>
+              <span class="doc__sep"></span>
+              <span class="doc__line w35 strong"></span>
+              <div class="doc__chips"><i></i><i></i><i></i><i></i></div>
+              <span class="doc__scan"></span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="contato">
+      <div class="container">
+        <header class="section__head section__head--center">
+          <p class="section__index mono reveal"><span class="c-purple">07</span> // <span data-i18n="contact.kicker">contato</span></p>
+          <h2 class="section__title section__title--xl reveal" data-delay="1" data-i18n-html="contact.title">Vamos construir <em>algo incrível</em>?</h2>
+          <p class="section__sub reveal" data-delay="2" data-i18n="contact.sub">Me chame para um projeto, uma vaga ou só para trocar uma ideia sobre código e design.</p>
+        </header>
+
+        <div class="contact">
+          <div class="contact__group reveal">
+            <div class="contact__label">
+              <span class="contact__label-ico" aria-hidden="true">
+                <svg viewBox="0 0 24 24"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg>
+              </span>
+              <div>
+                <h3 data-i18n="contact.personal">Pessoal</h3>
+                <p class="mono">Marcos Paulo</p>
+              </div>
+            </div>
+            <div class="contact__list">
+              <button class="ccard" data-copy="marcospaulo0496@gmail.com" data-glow>
+                <span class="ccard__ico ccard__ico--gmail"><img src="https://cdn.simpleicons.org/gmail/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__body"><span class="ccard__k mono">e-mail</span><span class="ccard__v">marcospaulo0496@gmail.com</span></span>
+                <span class="ccard__act mono" data-i18n="contact.copy">copiar</span>
+              </button>
+              <a class="ccard" href="https://wa.me/5531993688271" target="_blank" rel="noopener" data-glow>
+                <span class="ccard__ico ccard__ico--wa"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__body"><span class="ccard__k mono" data-i18n="contact.phone">telefone · whatsapp</span><span class="ccard__v">(31) 99368-8271</span></span>
+                <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </a>
+              <a class="ccard" href="https://www.linkedin.com/in/marcos-paulo-almeida-rosado-051182404/" target="_blank" rel="noopener" data-glow>
+                <span class="ccard__ico ccard__ico--in"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="none" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg></span>
+                <span class="ccard__body"><span class="ccard__k mono">linkedin</span><span class="ccard__v">Marcos Paulo Almeida Rosado</span></span>
+                <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </a>
+              <a class="ccard" href="https://www.instagram.com/marcoszkx7/" target="_blank" rel="noopener" data-glow>
+                <span class="ccard__ico ccard__ico--ig"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__body"><span class="ccard__k mono">instagram</span><span class="ccard__v">@marcoszkx7</span></span>
+                <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </a>
+            </div>
+          </div>
+
+          <div class="contact__group contact__group--biz reveal" data-delay="1">
+            <div class="contact__label">
+              <span class="contact__label-ico contact__label-ico--brand" aria-hidden="true">MA</span>
+              <div>
+                <h3 data-i18n="contact.business">Empresa</h3>
+                <p class="mono">MAvision Digital</p>
+              </div>
+            </div>
+            <div class="contact__list">
+              <button class="ccard" data-copy="mavisionsites@gmail.com" data-glow>
+                <span class="ccard__ico ccard__ico--gmail"><img src="https://cdn.simpleicons.org/gmail/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__body"><span class="ccard__k mono">e-mail</span><span class="ccard__v">mavisionsites@gmail.com</span></span>
+                <span class="ccard__act mono" data-i18n="contact.copy">copiar</span>
+              </button>
+              <a class="ccard" href="https://github.com/mavisionsites" target="_blank" rel="noopener" data-glow>
+                <span class="ccard__ico ccard__ico--gh"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__body"><span class="ccard__k mono" data-i18n="contact.github">github · meus projetos</span><span class="ccard__v">github.com/mavisionsites</span></span>
+                <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </a>
+              <a class="ccard" href="https://www.instagram.com/mavisiondigital/" target="_blank" rel="noopener" data-glow>
+                <span class="ccard__ico ccard__ico--ig"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__body"><span class="ccard__k mono">instagram</span><span class="ccard__v">@mavisiondigital</span></span>
+                <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </a>
+              <a class="ccard" href="https://mavisiondigital.vercel.app/" target="_blank" rel="noopener" data-glow>
+                <span class="ccard__ico ccard__ico--web"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
+                <span class="ccard__body"><span class="ccard__k mono">site</span><span class="ccard__v">mavisiondigital.vercel.app</span></span>
+                <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="footer">
+    <p class="mono">© 2026 Marcos Paulo · <span data-i18n="footer.rights">Todos os direitos reservados</span></p>
+  </footer>
+
+  <button class="to-top" id="toTop" aria-label="Voltar ao topo">
+    <svg class="to-top__ring" viewBox="0 0 48 48" aria-hidden="true"><circle cx="24" cy="24" r="22"/><circle class="to-top__progress" id="toTopProgress" cx="24" cy="24" r="22"/></svg>
+    <svg class="to-top__arrow" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 19V5M6 11l6-6 6 6"/></svg>
+  </button>
+
+  <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="assets/js/i18n.js?v=6"></script>
+  <script src="assets/js/main.js?v=6"></script>
+</body>
+</html>
