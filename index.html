@@ -3,6 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'self'; style-src 'self'; img-src 'self'; font-src 'self'; base-uri 'none'; form-action 'none'">
+  <meta name="referrer" content="strict-origin-when-cross-origin">
   <title>Marcos Paulo | Desenvolvedor Front-end</title>
   <meta name="description" content="Portfólio de Marcos Paulo, desenvolvedor front-end de Belo Horizonte e fundador da MAvision. Sites, sistemas, automação e IA.">
   <meta name="theme-color" content="#07050d">
@@ -10,10 +12,9 @@
   <meta property="og:description" content="Sites, sistemas, automação e IA. Fundador da MAvision.">
   <meta property="og:image" content="assets/img/marcos.jpg">
   <link rel="icon" href="assets/img/favicon.svg" type="image/svg+xml">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Manrope:wght@400;500;600;700&family=Unbounded:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css?v=6">
+  <link rel="preload" href="assets/fonts/unbounded.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="assets/css/fonts.css?v=7">
+  <link rel="stylesheet" href="assets/css/style.css?v=7">
 </head>
 <body class="is-loading">
 
@@ -152,11 +153,11 @@
 
         <div class="projects">
           <article class="project reveal" data-glow>
-            <a class="project__shot" href="https://mavisiondigital.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir site da MAvision">
+            <a class="project__shot" href="https://www.mavision.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Abrir site da MAvision">
               <div class="browser">
                 <div class="browser__bar">
                   <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-                  <span class="browser__url mono">mavisiondigital.vercel.app</span>
+                  <span class="browser__url mono">www.mavision.com.br</span>
                 </div>
                 <div class="browser__view">
                   <img src="assets/img/shots/mavision.webp" alt="Página completa do site da MAvision" loading="lazy">
@@ -176,7 +177,7 @@
               <ul class="tags mono">
                 <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Sitemap · SEO</li>
               </ul>
-              <a class="link-arrow" href="https://mavisiondigital.vercel.app/" target="_blank" rel="noopener">
+              <a class="link-arrow" href="https://www.mavision.com.br/" target="_blank" rel="noopener noreferrer">
                 <span data-i18n="projects.visit">Visitar site</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </a>
@@ -184,7 +185,7 @@
           </article>
 
           <article class="project project--rev reveal" data-glow>
-            <a class="project__shot" href="https://rumobh.onrender.com/" target="_blank" rel="noopener" aria-label="Abrir site do RUMO">
+            <a class="project__shot" href="https://rumobh.onrender.com/" target="_blank" rel="noopener noreferrer" aria-label="Abrir site do RUMO">
               <div class="browser">
                 <div class="browser__bar">
                   <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
@@ -208,7 +209,7 @@
               <ul class="tags mono">
                 <li>Flutter</li><li>Flask</li><li>Python</li><li>MySQL · SQLite</li>
               </ul>
-              <a class="link-arrow" href="https://rumobh.onrender.com/" target="_blank" rel="noopener">
+              <a class="link-arrow" href="https://rumobh.onrender.com/" target="_blank" rel="noopener noreferrer">
                 <span data-i18n="projects.visit">Visitar site</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </a>
@@ -216,11 +217,11 @@
           </article>
 
           <article class="project reveal" data-glow>
-            <a class="project__shot" href="https://lenmel.vercel.app/" target="_blank" rel="noopener" aria-label="Abrir site da Lenmel">
+            <a class="project__shot" href="https://www.lenmel.com.br/" target="_blank" rel="noopener noreferrer" aria-label="Abrir site da Lenmel">
               <div class="browser">
                 <div class="browser__bar">
                   <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-                  <span class="browser__url mono">lenmel.vercel.app</span>
+                  <span class="browser__url mono">www.lenmel.com.br</span>
                 </div>
                 <div class="browser__view">
                   <img src="assets/img/shots/lenmel.webp" alt="Página completa do site da Lenmel" loading="lazy">
@@ -240,7 +241,7 @@
               <ul class="tags mono">
                 <li>HTML5</li><li>CSS3</li><li>JavaScript</li><li>Sitemap · SEO</li>
               </ul>
-              <a class="link-arrow" href="https://lenmel.vercel.app/" target="_blank" rel="noopener">
+              <a class="link-arrow" href="https://www.lenmel.com.br/" target="_blank" rel="noopener noreferrer">
                 <span data-i18n="projects.visit">Visitar site</span>
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg>
               </a>
@@ -340,9 +341,9 @@
         </header>
 
         <div class="certs">
-          <a class="cert reveal" href="assets/certs/python-essentials-1.pdf" target="_blank" rel="noopener" data-glow>
+          <a class="cert reveal" href="assets/certs/python-essentials-1.pdf" target="_blank" rel="noopener noreferrer" data-glow>
             <div class="cert__head">
-              <span class="cert__icon"><img src="https://cdn.simpleicons.org/cisco/ffffff" alt="" width="28" height="28" loading="lazy"></span>
+              <span class="cert__icon"><img src="assets/img/icons/cisco.svg" alt="" width="28" height="28" loading="lazy"></span>
               <span class="cert__year mono" data-i18n="certs.c1.date">NOV 2026</span>
             </div>
             <h3 class="cert__name" data-i18n="certs.c1.name">Fundamentos do Python 1</h3>
@@ -353,9 +354,9 @@
             <span class="cert__id mono">ID 07d96cfb-73ea</span>
             <span class="cert__link mono"><span data-i18n="certs.link">ver certificado</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
           </a>
-          <a class="cert reveal" data-delay="1" href="assets/certs/cisco-packet-tracer.pdf" target="_blank" rel="noopener" data-glow>
+          <a class="cert reveal" data-delay="1" href="assets/certs/cisco-packet-tracer.pdf" target="_blank" rel="noopener noreferrer" data-glow>
             <div class="cert__head">
-              <span class="cert__icon"><img src="https://cdn.simpleicons.org/cisco/ffffff" alt="" width="28" height="28" loading="lazy"></span>
+              <span class="cert__icon"><img src="assets/img/icons/cisco.svg" alt="" width="28" height="28" loading="lazy"></span>
               <span class="cert__year mono" data-i18n="certs.c2.date">SET 2025</span>
             </div>
             <h3 class="cert__name" data-i18n="certs.c2.name">Começando com o Cisco Packet Tracer</h3>
@@ -366,9 +367,9 @@
             <span class="cert__id mono">ID cd404e76-8d83</span>
             <span class="cert__link mono"><span data-i18n="certs.link">ver certificado</span> <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
           </a>
-          <a class="cert reveal" data-delay="2" href="assets/certs/cisco-hardware.pdf" target="_blank" rel="noopener" data-glow>
+          <a class="cert reveal" data-delay="2" href="assets/certs/cisco-hardware.pdf" target="_blank" rel="noopener noreferrer" data-glow>
             <div class="cert__head">
-              <span class="cert__icon"><img src="https://cdn.simpleicons.org/cisco/ffffff" alt="" width="28" height="28" loading="lazy"></span>
+              <span class="cert__icon"><img src="assets/img/icons/cisco.svg" alt="" width="28" height="28" loading="lazy"></span>
               <span class="cert__year mono" data-i18n="certs.c3.date">JUN 2025</span>
             </div>
             <h3 class="cert__name" data-i18n="certs.c3.name">Fundamentos do Hardware do Computador</h3>
@@ -452,7 +453,7 @@
                 <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 4v11M7 10l5 5 5-5M5 20h14"/></svg>
                 <span data-i18n="resume.download">Baixar currículo</span>
               </a>
-              <a href="assets/curriculo-pt.pdf" class="btn btn--ghost magnetic" id="resumeView" target="_blank" rel="noopener">
+              <a href="assets/curriculo-pt.pdf" class="btn btn--ghost magnetic" id="resumeView" target="_blank" rel="noopener noreferrer">
                 <span data-i18n="resume.view">Visualizar</span>
               </a>
               <span class="resume__status mono"><span class="chip__dot"></span><span data-i18n="resume.status">PDF · atualizado nov 2026</span></span>
@@ -502,22 +503,22 @@
             </div>
             <div class="contact__list">
               <button class="ccard" data-copy="marcospaulo0496@gmail.com" data-glow>
-                <span class="ccard__ico ccard__ico--gmail"><img src="https://cdn.simpleicons.org/gmail/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__ico ccard__ico--gmail"><img src="assets/img/icons/gmail.svg" alt="" width="22" height="22" loading="lazy"></span>
                 <span class="ccard__body"><span class="ccard__k mono">e-mail</span><span class="ccard__v">marcospaulo0496@gmail.com</span></span>
                 <span class="ccard__act mono" data-i18n="contact.copy">copiar</span>
               </button>
-              <a class="ccard" href="https://wa.me/5531993688271" target="_blank" rel="noopener" data-glow>
-                <span class="ccard__ico ccard__ico--wa"><img src="https://cdn.simpleicons.org/whatsapp/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+              <a class="ccard" href="https://wa.me/5531993688271" target="_blank" rel="noopener noreferrer" data-glow>
+                <span class="ccard__ico ccard__ico--wa"><img src="assets/img/icons/whatsapp.svg" alt="" width="22" height="22" loading="lazy"></span>
                 <span class="ccard__body"><span class="ccard__k mono" data-i18n="contact.phone">telefone · whatsapp</span><span class="ccard__v">(31) 99368-8271</span></span>
                 <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a>
-              <a class="ccard" href="https://www.linkedin.com/in/marcos-paulo-almeida-rosado-051182404/" target="_blank" rel="noopener" data-glow>
+              <a class="ccard" href="https://www.linkedin.com/in/marcos-paulo-almeida-rosado-051182404/" target="_blank" rel="noopener noreferrer" data-glow>
                 <span class="ccard__ico ccard__ico--in"><svg viewBox="0 0 24 24" aria-hidden="true"><path fill="#fff" stroke="none" d="M4.98 3.5a2.5 2.5 0 1 1 0 5 2.5 2.5 0 0 1 0-5zM3 9.5h4V21H3zM9.5 9.5h3.8v1.6h.1c.5-.9 1.8-1.9 3.7-1.9 4 0 4.7 2.6 4.7 6V21h-4v-5.1c0-1.2 0-2.8-1.7-2.8s-2 1.3-2 2.7V21h-4z"/></svg></span>
                 <span class="ccard__body"><span class="ccard__k mono">linkedin</span><span class="ccard__v">Marcos Paulo Almeida Rosado</span></span>
                 <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a>
-              <a class="ccard" href="https://www.instagram.com/marcoszkx7/" target="_blank" rel="noopener" data-glow>
-                <span class="ccard__ico ccard__ico--ig"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+              <a class="ccard" href="https://www.instagram.com/marcoszkx7/" target="_blank" rel="noopener noreferrer" data-glow>
+                <span class="ccard__ico ccard__ico--ig"><img src="assets/img/icons/instagram.svg" alt="" width="22" height="22" loading="lazy"></span>
                 <span class="ccard__body"><span class="ccard__k mono">instagram</span><span class="ccard__v">@marcoszkx7</span></span>
                 <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a>
@@ -534,23 +535,23 @@
             </div>
             <div class="contact__list">
               <button class="ccard" data-copy="mavisionsites@gmail.com" data-glow>
-                <span class="ccard__ico ccard__ico--gmail"><img src="https://cdn.simpleicons.org/gmail/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+                <span class="ccard__ico ccard__ico--gmail"><img src="assets/img/icons/gmail.svg" alt="" width="22" height="22" loading="lazy"></span>
                 <span class="ccard__body"><span class="ccard__k mono">e-mail</span><span class="ccard__v">mavisionsites@gmail.com</span></span>
                 <span class="ccard__act mono" data-i18n="contact.copy">copiar</span>
               </button>
-              <a class="ccard" href="https://github.com/mavisionsites" target="_blank" rel="noopener" data-glow>
-                <span class="ccard__ico ccard__ico--gh"><img src="https://cdn.simpleicons.org/github/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+              <a class="ccard" href="https://github.com/mavisionsites" target="_blank" rel="noopener noreferrer" data-glow>
+                <span class="ccard__ico ccard__ico--gh"><img src="assets/img/icons/github-white.svg" alt="" width="22" height="22" loading="lazy"></span>
                 <span class="ccard__body"><span class="ccard__k mono" data-i18n="contact.github">github · meus projetos</span><span class="ccard__v">github.com/mavisionsites</span></span>
                 <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a>
-              <a class="ccard" href="https://www.instagram.com/mavisiondigital/" target="_blank" rel="noopener" data-glow>
-                <span class="ccard__ico ccard__ico--ig"><img src="https://cdn.simpleicons.org/instagram/ffffff" alt="" width="22" height="22" loading="lazy"></span>
+              <a class="ccard" href="https://www.instagram.com/mavisiondigital/" target="_blank" rel="noopener noreferrer" data-glow>
+                <span class="ccard__ico ccard__ico--ig"><img src="assets/img/icons/instagram.svg" alt="" width="22" height="22" loading="lazy"></span>
                 <span class="ccard__body"><span class="ccard__k mono">instagram</span><span class="ccard__v">@mavisiondigital</span></span>
                 <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a>
-              <a class="ccard" href="https://mavisiondigital.vercel.app/" target="_blank" rel="noopener" data-glow>
+              <a class="ccard" href="https://www.mavision.com.br/" target="_blank" rel="noopener noreferrer" data-glow>
                 <span class="ccard__ico ccard__ico--web"><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 0 1 0 18M12 3a14 14 0 0 0 0 18"/></svg></span>
-                <span class="ccard__body"><span class="ccard__k mono">site</span><span class="ccard__v">mavisiondigital.vercel.app</span></span>
+                <span class="ccard__body"><span class="ccard__k mono">site</span><span class="ccard__v">www.mavision.com.br</span></span>
                 <span class="ccard__act" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M7 17 17 7M8 7h9v9"/></svg></span>
               </a>
             </div>
@@ -572,7 +573,7 @@
 
   <div class="toast mono" id="toast" role="status" aria-live="polite"></div>
 
-  <script src="assets/js/i18n.js?v=6"></script>
-  <script src="assets/js/main.js?v=6"></script>
+  <script src="assets/js/i18n.js?v=7"></script>
+  <script src="assets/js/main.js?v=7"></script>
 </body>
 </html>

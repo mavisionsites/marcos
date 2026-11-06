@@ -15,49 +15,48 @@
 
   /* ---------- stack data ---------- */
 
-  const DEV = 'https://cdn.jsdelivr.net/gh/devicons/devicon@latest/icons/';
-  const SI = 'https://cdn.simpleicons.org/';
+  const ICONS = 'assets/img/icons/';
 
   const STACK = {
     languages: [
-      { name: 'Python', type: 'lang', icon: DEV + 'python/python-original.svg' },
-      { name: 'JavaScript', type: 'lang', icon: DEV + 'javascript/javascript-original.svg' },
-      { name: 'Dart', type: 'lang', icon: DEV + 'dart/dart-original.svg' },
-      { name: 'C#', type: 'lang', icon: DEV + 'csharp/csharp-original.svg' },
-      { name: 'C', type: 'lang', icon: DEV + 'c/c-original.svg' },
-      { name: 'Kotlin', type: 'lang', icon: DEV + 'kotlin/kotlin-original.svg' },
-      { name: 'Swift', type: 'lang', icon: DEV + 'swift/swift-original.svg' },
-      { name: 'Lua', type: 'game', icon: DEV + 'lua/lua-original.svg' }
+      { name: 'Python', type: 'lang', icon: ICONS + 'python.svg' },
+      { name: 'JavaScript', type: 'lang', icon: ICONS + 'javascript.svg' },
+      { name: 'Dart', type: 'lang', icon: ICONS + 'dart.svg' },
+      { name: 'C#', type: 'lang', icon: ICONS + 'csharp.svg' },
+      { name: 'C', type: 'lang', icon: ICONS + 'c.svg' },
+      { name: 'Kotlin', type: 'lang', icon: ICONS + 'kotlin.svg' },
+      { name: 'Swift', type: 'lang', icon: ICONS + 'swift.svg' },
+      { name: 'Lua', type: 'game', icon: ICONS + 'lua.svg' }
     ],
     frameworks: [
-      { name: 'HTML5', type: 'markup', icon: DEV + 'html5/html5-original.svg' },
-      { name: 'CSS3', type: 'style', icon: DEV + 'css3/css3-original.svg' },
-      { name: 'Bootstrap', type: 'ui', icon: DEV + 'bootstrap/bootstrap-original.svg' },
-      { name: 'Flutter', type: 'fw', icon: DEV + 'flutter/flutter-original.svg' },
-      { name: 'Flask', type: 'fw', icon: DEV + 'flask/flask-original.svg', invert: true },
-      { name: 'SwiftUI', type: 'ui', icon: SI + 'swift/0a84ff' }
+      { name: 'HTML5', type: 'markup', icon: ICONS + 'html5.svg' },
+      { name: 'CSS3', type: 'style', icon: ICONS + 'css3.svg' },
+      { name: 'Bootstrap', type: 'ui', icon: ICONS + 'bootstrap.svg' },
+      { name: 'Flutter', type: 'fw', icon: ICONS + 'flutter.svg' },
+      { name: 'Flask', type: 'fw', icon: ICONS + 'flask.svg', invert: true },
+      { name: 'SwiftUI', type: 'ui', icon: ICONS + 'swiftui.svg' }
     ],
     data: [
-      { name: 'MySQL', type: 'db', icon: DEV + 'mysql/mysql-original.svg' },
-      { name: 'SQLite', type: 'db', icon: DEV + 'sqlite/sqlite-original.svg' }
+      { name: 'MySQL', type: 'db', icon: ICONS + 'mysql.svg' },
+      { name: 'SQLite', type: 'db', icon: ICONS + 'sqlite.svg' }
     ],
     deploy: [
-      { name: 'GitHub', type: 'vcs', icon: DEV + 'github/github-original.svg', invert: true },
-      { name: 'Vercel', type: 'deploy', icon: DEV + 'vercel/vercel-original.svg', invert: true },
-      { name: 'Render', type: 'deploy', icon: SI + 'render/ffffff' },
-      { name: 'Cloudflare', type: 'cdn', icon: DEV + 'cloudflare/cloudflare-original.svg' }
+      { name: 'GitHub', type: 'vcs', icon: ICONS + 'github.svg', invert: true },
+      { name: 'Vercel', type: 'deploy', icon: ICONS + 'vercel.svg', invert: true },
+      { name: 'Render', type: 'deploy', icon: ICONS + 'render.svg' },
+      { name: 'Cloudflare', type: 'cdn', icon: ICONS + 'cloudflare.svg' }
     ],
     tools: [
-      { name: 'VS Code', type: 'ide', icon: DEV + 'vscode/vscode-original.svg' },
-      { name: 'IntelliJ', type: 'ide', icon: DEV + 'intellij/intellij-original.svg' },
-      { name: 'Android Studio', type: 'ide', icon: DEV + 'androidstudio/androidstudio-original.svg' },
-      { name: 'Xcode', type: 'ide', icon: DEV + 'xcode/xcode-original.svg' },
-      { name: 'Figma', type: 'design', icon: DEV + 'figma/figma-original.svg' }
+      { name: 'VS Code', type: 'ide', icon: ICONS + 'vscode.svg' },
+      { name: 'IntelliJ', type: 'ide', icon: ICONS + 'intellij.svg' },
+      { name: 'Android Studio', type: 'ide', icon: ICONS + 'androidstudio.svg' },
+      { name: 'Xcode', type: 'ide', icon: ICONS + 'xcode.svg' },
+      { name: 'Figma', type: 'design', icon: ICONS + 'figma.svg' }
     ],
     ai: [
-      { name: 'Claude Code', type: 'ai', icon: SI + 'claude/d97757' },
-      { name: 'DeepSeek', type: 'ai', icon: 'https://unpkg.com/@lobehub/icons-static-svg@latest/icons/deepseek-color.svg' },
-      { name: 'Copilot', type: 'ai', icon: SI + 'githubcopilot/ffffff' }
+      { name: 'Claude Code', type: 'ai', icon: ICONS + 'claude.svg' },
+      { name: 'DeepSeek', type: 'ai', icon: ICONS + 'deepseek.svg' },
+      { name: 'Copilot', type: 'ai', icon: ICONS + 'copilot.svg' }
     ]
   };
 
@@ -93,13 +92,14 @@
     $('#stackPath').textContent = currentCat;
     $('#stackCount').textContent = `· ${items.length} items`;
     grid.innerHTML = items.map((it, i) => `
-      <div class="tech" style="--i:${i}">
+      <div class="tech">
         <span class="tech__logo">
           <img src="${it.icon}" alt="" width="34" height="34" loading="lazy" ${it.invert ? 'class="invert"' : ''} data-fallback="${it.name.slice(0, 2)}">
         </span>
         <span class="tech__name">${it.name}</span>
         <span class="tech__type">${t('stackTypes')[it.type]}</span>
       </div>`).join('');
+    $$('.tech', grid).forEach((el, i) => el.style.setProperty('--i', i));
     $$('img[data-fallback]', grid).forEach(img => {
       img.addEventListener('error', () => {
         const s = document.createElement('span');
