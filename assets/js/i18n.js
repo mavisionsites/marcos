@@ -53,7 +53,7 @@ window.I18N = {
     'projects.visit': 'Visit site',
     'projects.p1.role': 'Founder',
     'projects.p1.cat': 'digital agency · websites, systems & AI',
-    'projects.p1.desc': 'The digital agency I founded to bring websites, systems and AI automation to businesses that want to be found. The site showcases services, case studies, a five-step process, an interactive drag-to-compare before and after, an FAQ and a quote form that takes the client straight to WhatsApp, all built for SEO and conversion.',
+    'projects.p1.desc': 'The digital agency I founded to bring websites, systems and AI automation to businesses that want to be found. The site brings together real case studies with full-page scrolling, five services with example pages, a drag-to-compare before and after, a five-step process, pricing from R$ 549.90, an FAQ and a form that sends the quote request straight to WhatsApp, all built for SEO and conversion.',
     'projects.p2.role': 'Founder · team project',
     'projects.p2.cat': 'edtech · decision-support app',
     'projects.p2.desc': 'An app that helps students in Minas Gerais choose a college with confidence. It combines Enem score, study mode, MEC rating and family income to generate explained recommendations, compares institutions side by side with distance on a map, simulates costs with scholarships and has an AI chat that explains why an option fits your profile better.',
