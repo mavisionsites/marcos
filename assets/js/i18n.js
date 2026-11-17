@@ -61,6 +61,10 @@ window.I18N = {
     'projects.p3.cat': 'corporate website · consulting',
     'projects.p3.desc': 'A corporate website I built for a business and tax consulting firm. I shaped the story around the client’s pain points, solutions on two fronts (management and tax), a six-step methodology and result indicators, with animated counters, a sober red and black look and a form that sends the lead straight to WhatsApp.',
 
+    'projects.p4.role': 'Client · MAvision',
+    'projects.p4.cat': 'law firm · corporate website',
+    'projects.p4.desc': 'Website for Bouzada Advogados, a Belo Horizonte law firm serving military personnel, public servants, civil-service candidates and companies. It highlights the current legal theses, organizes the five practice areas, shows each civil-service exam stage where an appeal is possible and offers a three-question quick check that sends the case straight to WhatsApp, with scroll animations and an English version.',
+
     'about.kicker': 'about',
     'about.title': 'Code, design and <em>ambition</em>.',
     'about.p1': 'I like understanding how everything is architected through code, and the front-end is where that curiosity becomes something people can see and feel.',
